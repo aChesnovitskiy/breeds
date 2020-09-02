@@ -8,25 +8,38 @@
     android:paddingVertical="@dimen/spacing_small_8">
 
     <TextView
-        android:id="@+id/item_breed_text_view"
+        android:id="@+id/breed_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_normal_16"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/item_breed_arrow_image_view"
+        app:layout_constraintEnd_toStartOf="@+id/breed_subbreeds_text_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Akita" />
 
+    <TextView
+        android:id="@+id/breed_subbreeds_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_normal_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/breed_arrow_image_view"
+        app:layout_constraintStart_toEndOf="@+id/breed_name_text_view"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="(2 subbreeds)"
+        tools:visibility="visible" />
+
     <ImageView
-        android:id="@+id/item_breed_arrow_image_view"
+        android:id="@+id/breed_arrow_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/spacing_normal_16"
         android:src="@drawable/ic_arrow_right_black_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/item_breed_text_view"
+        app:layout_constraintStart_toEndOf="@+id/breed_subbreeds_text_view"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
