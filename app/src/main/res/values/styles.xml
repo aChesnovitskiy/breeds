@@ -1,10 +1,22 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="NavBarTheme" parent="AppTheme">
+        <item name="colorSurface">@color/color_nav_bar</item>
+        <item name="colorOnPrimary">@color/color_on_nav_bar</item>
+    </style>
+
+    <style name="NavBarStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextColor">@color/color_nav_icons</item>
+        <item name="itemIconTint">@color/color_nav_icons</item>
     </style>
 
 </resources>

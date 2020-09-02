@@ -1,3 +1,9 @@
 <resources>
+
     <string name="app_name">Breeds</string>
+
+    // Titles
+    <string name="title_list">List</string>
+    <string name="title_favourites">Favourites</string>
+
 </resources>

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+
+    // General
+    <color name="color_primary">#FFFFFF</color>
+    <color name="color_primary_dark">#FFFFFF</color>
+    <color name="color_accent">#333333</color>
+    <color name="color_favourite">#DD002B</color>
+
+    // Navigation bar
+    <color name="color_nav_bar">#FFFFFF</color>
+    <color name="color_on_nav_bar">#333333</color>
+    <color name="color_on_nav_bar_inactive">#B6B6B6</color>
+
 </resources>
