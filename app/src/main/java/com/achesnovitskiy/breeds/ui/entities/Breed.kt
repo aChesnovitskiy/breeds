@@ -1,7 +1,7 @@
 package com.achesnovitskiy.breeds.ui.entities
 
-data class PresentationBreed(
+data class Breed(
     val name: String,
-    val subbreeds: List<PresentationBreed>?,
+    val subbreeds: List<Breed>?,
     val isFavourite: Boolean
 )

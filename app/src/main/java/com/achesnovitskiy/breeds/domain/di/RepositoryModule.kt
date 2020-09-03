@@ -1,9 +1,9 @@
 package com.achesnovitskiy.breeds.domain.di
 
-import com.achesnovitskiy.pagedlisttest.data.api.Api
-import com.achesnovitskiy.pagedlisttest.data.db.Db
-import com.achesnovitskiy.pagedlisttest.domain.Repository
-import com.achesnovitskiy.pagedlisttest.domain.RepositoryImpl
+import com.achesnovitskiy.breeds.data.api.Api
+//import com.achesnovitskiy.breeds.data.db.Db
+import com.achesnovitskiy.breeds.domain.Repository
+import com.achesnovitskiy.breeds.domain.RepositoryImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -13,5 +13,5 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideRepository(api: Api, db: Db): Repository = RepositoryImpl(api, db)
+    fun provideRepository(api: Api/*, db: Db*/): Repository = RepositoryImpl(api/*, db*/)
 }

@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.achesnovitskiy.breeds.R
-import com.achesnovitskiy.breeds.ui.entities.PresentationBreed
+import com.achesnovitskiy.breeds.ui.entities.Breed
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_breed.*
 
-class BreedsAdapter(private val onItemClickListener: (PresentationBreed) -> Unit) :
-    ListAdapter<PresentationBreed, BreedViewHolder>(
+class BreedsAdapter(private val onItemClickListener: (Breed) -> Unit) :
+    ListAdapter<Breed, BreedViewHolder>(
         BreedsDiffCallback()
     ) {
 
@@ -32,17 +32,17 @@ class BreedsAdapter(private val onItemClickListener: (PresentationBreed) -> Unit
     }
 }
 
-class BreedsDiffCallback : DiffUtil.ItemCallback<PresentationBreed>() {
+class BreedsDiffCallback : DiffUtil.ItemCallback<Breed>() {
 
     override fun areItemsTheSame(
-        oldItem: PresentationBreed,
-        newItem: PresentationBreed
+        oldItem: Breed,
+        newItem: Breed
     ): Boolean =
         oldItem.name == newItem.name
 
     override fun areContentsTheSame(
-        oldItem: PresentationBreed,
-        newItem: PresentationBreed
+        oldItem: Breed,
+        newItem: Breed
     ): Boolean =
         oldItem == newItem
 }
@@ -50,7 +50,7 @@ class BreedsDiffCallback : DiffUtil.ItemCallback<PresentationBreed>() {
 class BreedViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
     LayoutContainer {
 
-    fun bind(breed: PresentationBreed, onItemClickListener: (PresentationBreed) -> Unit) {
+    fun bind(breed: Breed, onItemClickListener: (Breed) -> Unit) {
 
         breed_name_text_view.text = breed.name
 

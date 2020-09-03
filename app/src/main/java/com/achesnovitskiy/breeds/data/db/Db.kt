@@ -3,14 +3,12 @@ package com.achesnovitskiy.breeds.data.db
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.achesnovitskiy.pagedlisttest.data.entites.Cat
 
-@Database(
-    entities = [Cat::class],
-    version = 1
-)
-@TypeConverters(Converters::class)
-abstract class Db : RoomDatabase() {
-
-    abstract val catsDao: CatsDao
-}
+//@Database(
+//    entities = [Any::class],
+//    version = 1
+//)
+//abstract class Db : RoomDatabase() {
+//
+//    abstract val favouritesDao: FavouritesDao
+//}
