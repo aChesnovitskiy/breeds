@@ -2,7 +2,6 @@ package com.achesnovitskiy.breeds.data.api
 
 import com.google.gson.annotations.SerializedName
 
-
 data class Message(
     @SerializedName("affenpinscher") val affenpinscher: List<String>,
     @SerializedName("african") val african: List<String>,

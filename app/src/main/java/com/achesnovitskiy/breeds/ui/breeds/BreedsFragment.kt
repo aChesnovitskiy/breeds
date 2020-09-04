@@ -15,10 +15,10 @@ import com.achesnovitskiy.breeds.ui.breeds.di.DaggerBreedsComponent
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_list.*
+import kotlinx.android.synthetic.main.fragment_breeds.*
 import javax.inject.Inject
 
-class BreedsFragment : BaseFragment(R.layout.fragment_list) {
+class BreedsFragment : BaseFragment(R.layout.fragment_breeds) {
 
     @Inject
     lateinit var viewModel: BreedsViewModel

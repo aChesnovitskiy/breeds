@@ -10,23 +10,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.achesnovitskiy.breeds.R
 import com.achesnovitskiy.breeds.app.App
 import com.achesnovitskiy.breeds.ui.base.BaseFragment
-import com.achesnovitskiy.breeds.ui.breeds.BreedsAdapter
-import com.achesnovitskiy.breeds.ui.breeds.BreedsViewModel
-import com.achesnovitskiy.breeds.ui.breeds.di.BreedsModule
 import com.achesnovitskiy.breeds.ui.breeds.di.DaggerBreedsComponent
+import com.achesnovitskiy.breeds.ui.favourites.di.DaggerFavouritesComponent
+import com.achesnovitskiy.breeds.ui.favourites.di.FavouritesModule
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_list.*
+import kotlinx.android.synthetic.main.fragment_breeds.*
+import kotlinx.android.synthetic.main.fragment_favourites.*
 import javax.inject.Inject
 
-class FavouritesFragment : BaseFragment(R.layout.fragment_list) {
+class FavouritesFragment : BaseFragment(R.layout.fragment_favourites) {
 
     @Inject
-    lateinit var viewModel: BreedsViewModel
+    lateinit var viewModel: FavouritesViewModel
 
-    private val breedsAdapter: BreedsAdapter by lazy(LazyThreadSafetyMode.NONE) {
-        BreedsAdapter {
+    private val favouritesAdapter: FavouritesAdapter by lazy(LazyThreadSafetyMode.NONE) {
+        FavouritesAdapter {
             Toast
                 .makeText(
                     requireContext(),
@@ -40,19 +40,19 @@ class FavouritesFragment : BaseFragment(R.layout.fragment_list) {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        DaggerBreedsComponent
+        DaggerFavouritesComponent
             .builder()
             .appComponent(App.appComponent)
-            .breedsModule(
-                BreedsModule(viewModelStoreOwner = this)
+            .favouritesModule(
+                FavouritesModule(viewModelStoreOwner = this)
             )
             .build()
             .inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        with(breeds_recycler_view) {
-            adapter = breedsAdapter
+        with(favourites_recycler_view) {
+            adapter = favouritesAdapter
 
             layoutManager = LinearLayoutManager(context)
 
@@ -66,12 +66,12 @@ class FavouritesFragment : BaseFragment(R.layout.fragment_list) {
         super.onResume()
 
         disposable = CompositeDisposable(
-            viewModel.breedsObservable
+            viewModel.favouritesObservable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    { breeds ->
-                        breedsAdapter.submitList(breeds)
+                    { favourites ->
+//                        favouritesAdapter.submitList(favourites)
                     },
                     { error ->
                         Log.e("My_Error", "Loading error", error)
