@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingVertical="@dimen/spacing_small_8">
+    android:paddingVertical="@dimen/spacing_normal_16">
 
     <TextView
         android:id="@+id/breed_name_text_view"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/spacing_normal_16"
+        android:layout_marginStart="@dimen/spacing_normal_16"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/breed_subbreeds_text_view"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +24,7 @@
         android:id="@+id/breed_subbreeds_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small_8"
         android:layout_marginEnd="@dimen/spacing_normal_16"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +42,6 @@
         android:src="@drawable/ic_arrow_right_black_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/breed_subbreeds_text_view"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 

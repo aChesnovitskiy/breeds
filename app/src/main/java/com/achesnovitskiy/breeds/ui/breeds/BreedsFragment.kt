@@ -67,15 +67,16 @@ class BreedsFragment : BaseFragment(R.layout.fragment_list) {
             viewModel.breedsObservable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe (
-                    {
-                        Log.d("My_Size", "${it.size}")
-                        it.forEach { breed ->
-                            Log.d("My_List", "$breed")
-                        }
+                .subscribe(
+                    { breeds ->
+                        breedsAdapter.submitList(breeds)
+//                        Log.d("My_Size", "${it.size}")
+//                        it.forEach { breed ->
+//                            Log.d("My_List", "$breed")
+//                        }
                     },
-                    {
-                        Log.d("My_Error", "$it")
+                    { error ->
+                        Log.e("My_Error", "Loading error", error)
                     }
                 )
         )
