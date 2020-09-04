@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.achesnovitskiy.breeds.R
-import com.achesnovitskiy.breeds.ui.entities.Breed
+import com.achesnovitskiy.breeds.ui.dto.Breed
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_breed.*
 import java.util.*

@@ -2,7 +2,7 @@ package com.achesnovitskiy.breeds.ui.breeds
 
 import androidx.lifecycle.ViewModel
 import com.achesnovitskiy.breeds.domain.Repository
-import com.achesnovitskiy.breeds.ui.entities.Breed
+import com.achesnovitskiy.breeds.ui.dto.Breed
 import io.reactivex.Observable
 import javax.inject.Inject
 

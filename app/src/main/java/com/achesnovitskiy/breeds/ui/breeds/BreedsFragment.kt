@@ -70,10 +70,6 @@ class BreedsFragment : BaseFragment(R.layout.fragment_list) {
                 .subscribe(
                     { breeds ->
                         breedsAdapter.submitList(breeds)
-//                        Log.d("My_Size", "${it.size}")
-//                        it.forEach { breed ->
-//                            Log.d("My_List", "$breed")
-//                        }
                     },
                     { error ->
                         Log.e("My_Error", "Loading error", error)

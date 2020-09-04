@@ -3,7 +3,7 @@ package com.achesnovitskiy.breeds.domain
 
 import android.util.Log
 import com.achesnovitskiy.breeds.data.api.Api
-import com.achesnovitskiy.breeds.ui.entities.Breed
+import com.achesnovitskiy.breeds.ui.dto.Breed
 //import com.achesnovitskiy.breeds.data.db.Db
 import io.reactivex.Observable
 import javax.inject.Inject

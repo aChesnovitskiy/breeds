@@ -1,4 +1,4 @@
-package com.achesnovitskiy.breeds.ui.entities
+package com.achesnovitskiy.breeds.ui.dto
 
 data class Breed(
     val name: String,

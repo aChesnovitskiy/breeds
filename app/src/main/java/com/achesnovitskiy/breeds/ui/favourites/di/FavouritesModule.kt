@@ -1,33 +1,33 @@
-package com.achesnovitskiy.breeds.ui.breeds.di
+package com.achesnovitskiy.breeds.ui.favourites.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import com.achesnovitskiy.breeds.domain.Repository
-import com.achesnovitskiy.breeds.ui.breeds.BreedsViewModel
-import com.achesnovitskiy.breeds.ui.breeds.BreedsViewModelImpl
 import com.achesnovitskiy.breeds.ui.di.ViewScope
+import com.achesnovitskiy.breeds.ui.favourites.FavouritesViewModel
+import com.achesnovitskiy.breeds.ui.favourites.FavouritesViewModelImpl
 import dagger.Module
 import dagger.Provides
 
 @Module
-class BreedsModule(
+class FavouritesModule(
     private val viewModelStoreOwner: ViewModelStoreOwner
 ) {
 
     @Provides
     @ViewScope
-    fun provideBreedsViewModel(repository: Repository): BreedsViewModel =
+    fun provideFavouritesViewModel(repository: Repository): FavouritesViewModel =
         ViewModelProvider(
             viewModelStoreOwner,
-            BreedsViewModelFactory(repository)
-        ).get(BreedsViewModelImpl::class.java)
+            FavouritesViewModelFactory(repository)
+        ).get(FavouritesViewModelImpl::class.java)
 
-    class BreedsViewModelFactory(private val repository: Repository) :
+    class FavouritesViewModelFactory(private val repository: Repository) :
         ViewModelProvider.NewInstanceFactory() {
 
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel?> create(modelClass: Class<T>): T =
-            BreedsViewModelImpl(repository) as T
+            FavouritesViewModelImpl(repository) as T
     }
 }
