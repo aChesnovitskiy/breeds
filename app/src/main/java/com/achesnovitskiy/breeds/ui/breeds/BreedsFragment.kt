@@ -69,10 +69,13 @@ class BreedsFragment : BaseFragment(R.layout.fragment_list) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe (
                     {
-                        Log.d("My_", it)
+                        Log.d("My_Size", "${it.size}")
+                        it.forEach { breed ->
+                            Log.d("My_List", "$breed")
+                        }
                     },
                     {
-                        Log.d("My_", "$it")
+                        Log.d("My_Error", "$it")
                     }
                 )
         )
