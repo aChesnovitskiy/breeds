@@ -16,6 +16,7 @@ import com.achesnovitskiy.breeds.ui.favourites.di.FavouritesModule
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_breeds.*
 import kotlinx.android.synthetic.main.fragment_favourites.*
 import javax.inject.Inject
@@ -51,6 +52,8 @@ class FavouritesFragment : BaseFragment(R.layout.fragment_favourites) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        requireActivity().main_toolbar_title.text = getString(R.string.title_favourites)
+
         with(favourites_recycler_view) {
             adapter = favouritesAdapter
 

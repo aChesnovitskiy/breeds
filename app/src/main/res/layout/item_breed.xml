@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -26,13 +27,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_small_8"
         android:layout_marginEnd="@dimen/spacing_normal_16"
+        android:textSize="@dimen/font_small_12"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/breed_arrow_image_view"
         app:layout_constraintStart_toEndOf="@+id/breed_name_text_view"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="(2 subbreeds)"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        tools:ignore="SpUsage" />
 
     <ImageView
         android:id="@+id/breed_arrow_image_view"

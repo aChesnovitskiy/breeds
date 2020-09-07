@@ -33,8 +33,7 @@ class RepositoryImpl @Inject constructor(
                     .map { breedName ->
                         Breed(
                             name = breedName,
-                            subbreeds = readInstanceProperty(breedsResponse.message, breedName),
-                            isFavourite = false
+                            subbreeds = readInstanceProperty(breedsResponse.message, breedName)
                         )
                     }
             }
