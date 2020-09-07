@@ -16,10 +16,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_breeds.*
+import kotlinx.android.synthetic.main.fragment_list.*
 import javax.inject.Inject
 
-class BreedsFragment : BaseFragment(R.layout.fragment_breeds) {
+class BreedsFragment : BaseFragment(R.layout.fragment_list) {
 
     @Inject
     lateinit var viewModel: BreedsViewModel
@@ -50,9 +50,13 @@ class BreedsFragment : BaseFragment(R.layout.fragment_breeds) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        requireActivity().main_toolbar_title.text = getString(R.string.title_list)
+        setupToolbar(
+            title = getString(R.string.title_list),
+            isBackButtonEnable = false,
+            backButtonText = null
+        )
 
-        with(breeds_recycler_view) {
+        with(list_recycler_view) {
             adapter = breedsAdapter
 
             layoutManager = LinearLayoutManager(context)

@@ -10,18 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.achesnovitskiy.breeds.R
 import com.achesnovitskiy.breeds.app.App
 import com.achesnovitskiy.breeds.ui.base.BaseFragment
-import com.achesnovitskiy.breeds.ui.breeds.di.DaggerBreedsComponent
 import com.achesnovitskiy.breeds.ui.favourites.di.DaggerFavouritesComponent
 import com.achesnovitskiy.breeds.ui.favourites.di.FavouritesModule
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_breeds.*
-import kotlinx.android.synthetic.main.fragment_favourites.*
+import kotlinx.android.synthetic.main.fragment_list.*
 import javax.inject.Inject
 
-class FavouritesFragment : BaseFragment(R.layout.fragment_favourites) {
+class FavouritesFragment : BaseFragment(R.layout.fragment_list) {
 
     @Inject
     lateinit var viewModel: FavouritesViewModel
@@ -52,9 +49,13 @@ class FavouritesFragment : BaseFragment(R.layout.fragment_favourites) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        requireActivity().main_toolbar_title.text = getString(R.string.title_favourites)
+        setupToolbar(
+            title = getString(R.string.title_favourites),
+            isBackButtonEnable = false,
+            backButtonText = null
+        )
 
-        with(favourites_recycler_view) {
+        with(list_recycler_view) {
             adapter = favouritesAdapter
 
             layoutManager = LinearLayoutManager(context)
